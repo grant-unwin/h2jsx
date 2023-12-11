@@ -1,0 +1,35 @@
+# Dependency directories
+/node_modules
+
+# Build output
+/dist
+
+# IDE and editor files
+/.vscode
+/.idea
+*.iml
+*.ipr
+*.iws
+*.bak
+*.swp
+
+# Logs and debugging files
+/logs
+/debug.log
+/debug/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.test
+.env.test.local
+
+# Compiled output
+*.js
+*.js.map
+*.d.ts
+
+# Miscellaneous
+.DS_Store
+Thumbs.db

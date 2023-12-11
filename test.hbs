@@ -1,0 +1,53 @@
+</div>
+{{>img type="top-hero" baseUrl="/images/background/out" src=this.heroImage alt=alttagHero }}
+{{someVariableHere}}
+<div class="container">
+  {{! We need to do this havk to have full bleed images }}
+
+  <div class="drinkItem beer-pairing row" itemscope itemtype="https://schema.org/Recipe">
+    <meta itemprop="image" content="https://www.bulleit.com/images/background/out/640/{{this.heroImage}}" />
+    <h1 itemprop="name">{{{name}}}</h1>
+
+    {{#each pairings}}
+    <div class="pairing col-xs-12 col-sm-8 col-sm-offset-2">
+      <h2 class="text-center">{{this.title}}</h2>
+      <div class="row">
+        <div class="col-sm-5">
+          {{>img type="drink-tile" baseUrl="images/drinks/out" src=this.image alt=this.title }}
+        </div>
+        <div class="col-sm-7">
+          {{this.description}}
+        </div>
+      </div>
+      {{>divider type="dotted" }}
+    </div>
+    {{/each}}
+    <div class="clearfix"></div>
+    {{>divider type="solid" }}
+    <div class="other-pairings col-xs-12 col-sm-12 col-sm-offset-0">
+      <h2 class="text-center">Other beer pairings</h2>
+      <div class="row">
+        {{#each otherPairings}}
+        <div class="col-sm-6">
+          <div class="productSiteItemGrid item">
+            <a class="cta-image"
+              href="{{#if ../production}}whiskey-drinks/boilermaker{{/if}}/{{this.slug}}{{#unless ../production}}.html{{else}}/{{/unless}}">
+              {{>img
+              type="recomended-pairs"
+              baseUrl="/images/background/out"
+              src=this.image
+              alt=this.title
+              }}
+            </a>
+            <h3><a class="cta-headline"
+                href="{{#if ../production}}whiskey-drinks/boilermaker{{/if}}/{{this.slug}}{{#unless ../production}}.html{{else}}/{{/unless}}">{{this.title}}</a>
+            </h3>
+            <h3><a class="cta-primary"
+                href="{{#if ../production}}whiskey-drinks/boilermaker{{/if}}/{{this.slug}}{{#unless ../production}}.html{{else}}/{{/unless}}">Learn
+                More</a></h3>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
